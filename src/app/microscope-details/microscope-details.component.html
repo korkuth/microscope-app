@@ -1,0 +1,40 @@
+<h2>Microscope Details</h2>
+
+<hr />
+<div *ngIf="microscope">
+    <div>
+        <label><b>id: </b></label> {{microscope.data.id}}
+    </div>
+    <div>
+        <label><b>status: </b></label> {{microscope.data.status}}
+    </div>
+    <div>
+        <label><b>machine-type: </b></label> {{microscope.data.machine_type}}
+    </div>
+    <div>
+        <label><b>longitude: </b></label> {{microscope.data.longitude}}
+    </div>
+    <div>
+        <label><b>latitude: </b></label> {{microscope.data.latitude}}
+    </div>
+    <div>
+        <label><b>last-maintenance: </b></label> {{microscope.data.last_maintenance}}
+    </div>
+    <div>
+        <label><b>install-date: </b></label> {{microscope.data.install_date}}
+    </div>
+    <div>
+        <label><b>floor: </b></label> {{microscope.data.floor}}
+    </div>
+    <div>
+        <label><b>events: </b></label>
+        <div *ngFor="let microscope of microscope.data.events">
+            <label><b>timestamp: </b></label> {{microscope.timestamp}} 
+            <label><b>status: </b></label>{{microscope.status}}
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Microscope List</button><br>
